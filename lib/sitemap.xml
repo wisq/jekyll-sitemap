@@ -12,7 +12,7 @@
     <priority>0.8</priority>
   </url>
   {% endunless %}{% endfor %}
-  {% for page in site.html_pages %}{% unless page.sitemap == false %}
+  {% for page in site.html_pages %}{% unless page.sitemap == false or page.generated == true %}
   <url>
     <loc>{{ page.url | replace:'index.html','' | prepend: site_url }}</loc>
     {% if page.last_modified_at %}
